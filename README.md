@@ -47,7 +47,7 @@ Please comment on an Issue if you'd like to work on it, and submit a Pull Reques
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) [code of conduct](http://contributor-covenant.org/version/1/3/0/).
 
 ## About NIRD
 
