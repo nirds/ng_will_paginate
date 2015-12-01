@@ -1,8 +1,14 @@
 # NgWillPaginate
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ng_will_paginate`. To experiment with that code, run `bin/console` for an interactive prompt.
+ng_will_paginate makes it easy to use the will_paginate gem with Angular, everyone's favorte Javascript framework.
 
-TODO: Delete this and the text above, and describe your gem
+Normal use of will_paginate gem requires a page reload. Trying to paginate with AJAX on a single page requires quite a bit of extra work. This gem does that work for you.
+
+This allows you to use the will_paginate gem via an Angular controller. User pushes button on page, triggering a method in Angular controller that calls a Rails controller for selected page of records.
+
+Includes:
+  - service that talks to rails
+  - directive that puts links on page
 
 ## Installation
 
@@ -16,21 +22,24 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install ng_will_paginate
+Add 'ng-will-paginate' as a dependency of your Angular app:
+angular.module('myModule', ['ng-will-paginate'])
 
 ## Usage
+Include setup steps for will_paginate here, too.
 
-TODO: Write usage instructions here
+When triggering on page, pass model name like in WP. Setup includes which Rails endpoint each model name can go to.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment. 
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
+Issues and tasks are in the Issues for this repo. We'd love your help!
+
+Please comment on an Issue if you'd like to work on it, and submit a Pull Request when the work is done. All code should be tested.
 
 1. Fork it ( https://github.com/[my-github-username]/ng_will_paginate/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
