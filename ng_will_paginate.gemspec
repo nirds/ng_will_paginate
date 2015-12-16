@@ -6,16 +6,16 @@ require 'ng_will_paginate/version'
 Gem::Specification.new do |spec|
   spec.name          = "ng_will_paginate"
   spec.version       = NgWillPaginate::VERSION
-  spec.authors       = ["Cheri Allen"]
-  spec.email         = ["cherimarie@gmail.com"]
+  spec.authors       = ["Cheri Allen", "Utah Kate Newman", "Patrick Dent"]
+  spec.email         = ["nirds@nird.us"]
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Allows you to incorporate will_paginate into an Angular on Ruby on Rails app.}
+  spec.description   = %q{}
+  spec.homepage      = "http://github.com/nirds/ng_will_paginate"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
