@@ -15,12 +15,15 @@ Includes:
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'will_paginate'
 gem 'ng_will_paginate'
 ```
 
 And then execute:
 
     $ bundle
+
+Add '//= require ng_will_paginate' to your application.js manifest
 
 Add 'ng-will-paginate' as a dependency of your Angular app:
 angular.module('myModule', ['ng-will-paginate'])
