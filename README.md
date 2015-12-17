@@ -22,6 +22,8 @@ And then execute:
 
     $ bundle
 
+Add '//= require ng_will_paginate' to your application.js manifest
+
 Add 'ng-will-paginate' as a dependency of your Angular app:
 angular.module('myModule', ['ng-will-paginate'])
 
