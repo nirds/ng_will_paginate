@@ -35,12 +35,12 @@ angular.module('ng-will-paginate', [])
         .error ((data, status, headers, config) ->
           return data.errors
         )
-  ]
 
-buildPagesArray= (current, max, scope)->
-  scope.pages = []
-  scope.pages.push(current - 2) if current - 2 > 0
-  scope.pages.push(current - 1) if current - 1 > 0
-  scope.pages.push(current)
-  scope.pages.push(current + 1) if current + 1 <= max
-  scope.pages.push(current + 2) if current + 2 <= max
+    buildPagesArray: (current, max, scope)->
+      scope.pages = []
+      scope.pages.push(current - 2) if current - 2 > 0
+      scope.pages.push(current - 1) if current - 1 > 0
+      scope.pages.push(current)
+      scope.pages.push(current + 1) if current + 1 <= max
+      scope.pages.push(current + 2) if current + 2 <= max
+    ]
