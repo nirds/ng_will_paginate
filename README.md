@@ -15,6 +15,7 @@ Includes:
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'will_paginate'
 gem 'ng_will_paginate'
 ```
 

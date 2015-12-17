@@ -29,18 +29,18 @@ angular.module('ng-will-paginate', [])
         .success ((data, status, headers, config) ->
           scope.currentPage = pageNumber
           scope.max = data.max
-          buildPagesArray(scope.currentPage, scope.max, scope)
+
+          scope.pages = []
+          scope.pages.push(scope.currentPage - 2) if scope.currentPage - 2 > 0
+          scope.pages.push(scope.currentPage - 1) if scope.currentPage - 1 > 0
+          scope.pages.push(scope.currentPage)
+          scope.pages.push(scope.currentPage + 1) if scope.currentPage + 1 <= scope.max
+          scope.pages.push(scope.currentPage + 2) if scope.currentPage + 2 <= scope.max
+
           scope.records = data.records
         )
         .error ((data, status, headers, config) ->
           return data.errors
         )
 
-    buildPagesArray: (current, max, scope)->
-      scope.pages = []
-      scope.pages.push(current - 2) if current - 2 > 0
-      scope.pages.push(current - 1) if current - 1 > 0
-      scope.pages.push(current)
-      scope.pages.push(current + 1) if current + 1 <= max
-      scope.pages.push(current + 2) if current + 2 <= max
-    ]
+  ]
