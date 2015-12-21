@@ -29,7 +29,57 @@ Add 'ng-will-paginate' as a dependency of your Angular app:
 angular.module('myModule', ['ng-will-paginate'])
 
 ## Usage
-Include setup steps for will_paginate here, too.
+To use ng_will_paginate, first include the logic to retrieve your records from your database.
+
+###In your Rails controller:
+```ruby
+def index
+  per_page = 50 //the number of records to display per page
+  page = params[:page] //the page number
+
+  @records = MyClass.paginate(:page => page, :per_page => per_page).order(created_at: 'desc') //you can, of course, customize the .order parameters
+
+  render json: NgWillPaginate::Objectifier.JSONify( per_page, page, @records,
+                                                  { options })
+```
+####options:
+  Include the following options as keys to your options hash. Each accepts an array of symbols as parameters.
+
+#####only:
+  Only include the specified attribute or list of attributes in the serialized output. Attribute names must be specified as strings.
+#####except:
+  Do not include the specified attribute or list of attributes in the serialized output. Attribute names must be specified as strings.
+#####include:
+  Pass the :include =&gt; :my_associated_class option to my_class, allowing the :my_associated_class association in the MyClass model to be converted to JSON as well.
+#####methods:
+  Includes the results of :my_method
+
+[See the .to_JSON documentation for examples](http://apidock.com/rails/Hash/to_json)
+
+###In your Angular controller:
+1. inject $scope and paginationService into your controller
+```coffeescript
+myApp.controller 'myController', ['$scope', 'paginationService', ($scope, paginationService)->
+//the controller code
+]
+```
+2. add the following code to your controller
+```coffescript
+$scope.route = '/my_route' //this is the path for your method, if the index method above was for a class called 'Record', the path may look like '/records'
+
+$scope.goToPage=(pageNumber)->
+  paginationService.getPage(pageNumber, $scope.route, $scope)
+
+$scope.goToPage 1
+```
+
+Now your records will be available as an array of JSON object in $scope.records
+
+3.in your view
+```html
+<pagination></pagination>
+```
+
 
 When triggering on page, pass model name like in WP. Setup includes which Rails endpoint each model name can go to.
 
