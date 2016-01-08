@@ -75,7 +75,7 @@ $scope.goToPage 1
 
 Now your records will be available as an array of JSON object in $scope.records
 
-3.in your view
+3. in your view
 ```html
 <pagination></pagination>
 ```
