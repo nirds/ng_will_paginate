@@ -34,16 +34,12 @@ To use ng_will_paginate, first include the logic to retrieve your records from y
 ###In your Rails controller:
 ```ruby
 def index
-  per_page = 50 //the number of records to display per page
-  page = params[:page] //the page number
+  @records = MyClass.paginate(:page => params[:page], :per_page => 10).order(created_at: 'desc') //you can, of course, customize the .order parameters and the value for :per_page
 
-  @records = MyClass.paginate(:page => page, :per_page => per_page).order(created_at: 'desc') //you can, of course, customize the .order parameters
-
-  render json: NgWillPaginate::Objectifier.JSONify( per_page, page, @records,
-                                                  { options })
+  render json: { max: @records.total_pages, records: @records.as_json }
 ```
 ####options:
-  Include the following options as keys to your options hash. Each accepts an array of symbols as parameters.
+  Remember that the .as_json method can be passed a hash of options to customize what it returns. You can include the following as keys to your options hash with an array of symbols as parameters.
 
 #####only:
   Only include the specified attribute or list of attributes in the serialized output. Attribute names must be specified as strings.
