@@ -9,3 +9,5 @@
 /tmp/
 /spec/dummy/tmp/*
 *.cache
+/spec/dummy/log/*
+.log
