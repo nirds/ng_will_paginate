@@ -1,7 +1,7 @@
 angular.module('ng-will-paginate', [])
   .directive 'pagination', ->
     {
-      restrict: 'A',
+      restrict: 'E',
       scope: false,
       template:  "<div class='pagination-container' ng-if='pages.length > 1'>
                     <a class='pagination' ng-click='goToPage(1)' ng-if='currentPage > 1'>
