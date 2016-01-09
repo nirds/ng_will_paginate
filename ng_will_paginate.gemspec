@@ -28,5 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "jasmine-rails"
   spec.add_development_dependency "rails"
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "coffee-rails"
+  spec.add_development_dependency "angularjs-rails"
 
 end
