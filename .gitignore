@@ -10,4 +10,5 @@
 /spec/dummy/tmp/*
 *.cache
 /spec/dummy/log/*
+/spec/dummy/public/*
 .log
