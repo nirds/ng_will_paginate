@@ -61,13 +61,10 @@ $scope.goToPage 1
 
 Now your records will be available as an array of JSON object in $scope.records
 
-3. in your view
+3. in your view add the pagination directive where you'd like your page links to show up
 ```html
 <pagination></pagination>
 ```
-
-
-When triggering on page, pass model name like in WP. Setup includes which Rails endpoint each model name can go to.
 
 ## Development
 
