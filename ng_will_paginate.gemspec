@@ -25,5 +25,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_runtime_dependency "will_paginate"
+  spec.add_development_dependency "jasmine-rails"
+  spec.add_development_dependency "rails"
+  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "coffee-rails"
+  spec.add_development_dependency "angularjs-rails"
 
 end
