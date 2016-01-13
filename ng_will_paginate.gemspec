@@ -9,10 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Cheri Allen", "Utah Kate Newman", "Patrick Dent"]
   spec.email         = ["nirds@nird.us"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{Allows you to incorporate will_paginate into an Angular on Ruby on Rails app.}
   spec.description   = %q{}
   spec.homepage      = "http://github.com/nirds/ng_will_paginate"
