@@ -89,6 +89,17 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+### Testing
+We love testing - so we want to test all the things.
+
+To run jasmine tests:
+
+1. Navigate from the gem's repo to the dummy app
+```cd spec/dummy```
+2. Start a server
+```rails s```
+3. In your browser navigate to "localhost:3000/specs"
+
 ## Contributing
 Issues and tasks are in the Issues for this repo. We'd love your help!
 
