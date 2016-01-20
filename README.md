@@ -49,7 +49,6 @@ myApp.controller 'myController', ['$scope', 'paginationService', ($scope, pagina
 //the controller code
 ]
 ```
-
 2. add the following code to your controller
 ```coffescript
 $scope.route = '/my_route' //this is the path for your method, if the index method above was for a class called 'Record', the path may look like '/records'
