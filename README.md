@@ -31,7 +31,7 @@ angular.module('myModule', ['ng-will-paginate'])
 ## Usage
 To use ng_will_paginate, first include the logic to retrieve your records from your database.
 
-###In your Rails controller:
+### In your Rails controller:
 ```ruby
 def index
   @records = MyClass.paginate(:page => params[:page], :per_page => 10).order(created_at: 'desc')
@@ -39,10 +39,10 @@ def index
   render json: {  max: @records.total_pages,
                   records: @records.as_json() }
 ```
-The .as_json() method can accept all of it's normal options.
+The .as_json() method can accept all of its normal options.
 [See the .to_JSON documentation for examples](http://apidock.com/rails/Hash/to_json)
 
-###In your Angular controller:
+### In your Angular controller:
 1. inject $scope and paginationService into your controller
 ```coffeescript
 myApp.controller 'myController', ['$scope', 'paginationService', ($scope, paginationService)->
@@ -52,15 +52,11 @@ myApp.controller 'myController', ['$scope', 'paginationService', ($scope, pagina
 2. add the following code to your controller
 ```coffescript
 $scope.route = '/my_route' //this is the path for your method, if the index method above was for a class called 'Record', the path may look like '/records'
-
 $scope.goToPage=(pageNumber)->
   paginationService.getPage(pageNumber, $scope.route, $scope)
-
 $scope.goToPage 1
 ```
-
 Now your records will be available as an array of JSON object in $scope.records
-
 3. in your view add the pagination directive where you'd like your page links to show up
 ```html
 <pagination></pagination>
@@ -100,7 +96,7 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 
 ![alt text](https://s3-us-west-2.amazonaws.com/nirdmarketingassets/nird_logo_centered.png "Northwest Independent Ruby Development")
 
-Grace_period is maintained and funded by NIRD LLC. The names and logos of NIRD are trademarks of NIRD LLC.
+ng_will_paginate is maintained and funded by NIRD LLC. The names and logos of NIRD are trademarks of NIRD LLC.
 We are committed to giving back to the open source community. We are [available for hire.](http://www.nird.us/?utm_source=github)
 
 ## License
